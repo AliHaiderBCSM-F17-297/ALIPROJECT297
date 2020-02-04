@@ -13,8 +13,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private ListView objListView;
-    private String [] myData={"Lahore","Karachi","Islamabad","Multan","Peshawar","Rawalpindi","Lahore","Karachi","Islamabad","Multan","Peshawar","Rawalpindi",
-            "Lahore","Karachi","Islamabad","Multan","Peshawar","Rawalpindi"};
+    private String [] myData={"Lahore","Karachi","Islamabad","Multan","Peshawar"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +32,31 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int listPosition, long l) {
 
                // Toast.makeText(MainActivity.this,Integer.toString(listPosition)+"item clicked", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this,lahore.class);
-                startActivity(intent);
+                if(listPosition == 0) {
+                    Intent intent = new Intent(MainActivity.this, lahore.class);
+                    startActivity(intent);
+                }
+                else if(listPosition == 1)
+                {
+                    Intent intent = new Intent(MainActivity.this,karachi.class);
+                    startActivity(intent);
+                }
+                else if(listPosition == 2)
+                {
+                    Intent intent = new Intent(MainActivity.this,isb.class);
+                    startActivity(intent);
+                }
+                else if(listPosition == 3)
+                {
+                    Intent intent = new Intent(MainActivity.this,multan.class);
+                    startActivity(intent);
+                }
+                else if(listPosition == 4)
+                {
+                    Intent intent = new Intent(MainActivity.this,peshawar.class);
+                    startActivity(intent);
+                }
+
             }
         });
     }
